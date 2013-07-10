@@ -1,0 +1,13 @@
+<h1>Search Movies</h1>
+
+<form action="/movies/search" method="get">
+  <input type="string" name="movie">
+  <button>Search</button>
+</form>
+
+<% if @movies.nil? %>
+<% else %>
+  <% @movies.each  do |movie| %>
+    <%= movie.title %>
+  <% end %>
+<% end %>
