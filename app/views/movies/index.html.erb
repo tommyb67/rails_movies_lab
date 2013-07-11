@@ -7,7 +7,7 @@
 
 <% if @movies.nil? %>
 <% else %>
-  <% @movies.each  do |movie| %>
-    <%= movie.title %>
+  <% @movies.each do |movie| %>
+    <%= link_to movie.title, movie.id %>
   <% end %>
 <% end %>

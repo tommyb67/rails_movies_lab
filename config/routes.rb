@@ -1,12 +1,18 @@
 RailsMoviesLab::Application.routes.draw do
-  root :to => 'welcome#index'
+  get "actors/index"
+
+  get "actors/show"
+
   get '/movies/search' => 'movies#search', as: 'movie_search'
-  resources :movies
   get '/movies' => 'movies#index'
+  post 'movies/:id/save' => 'movies#save', as: 'save'
+  get 'movies/saved' => 'movies#saved', as: 'saved'
   get '/movies/favorites' => 'movies#favorites', as: 'favorite_movies'
-  post '/movies/:id/add_favorite' => 'movies#add_favorite', as: 'add_movies_favorite'
+  post '/movies/:id/add_favorite' => 'movies#add_favorite', as: 'add_favorite'
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  root :to => 'welcome#index'
+  resources :movies
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
