@@ -1,4 +1,13 @@
-<%= @movie.title %>
 
-<%= button_to "Save", save_path %></br>
-<%= button_to "Favorite", add_favorite_path %>
+<b>Movie Title:</b> <%= @movie.title %></br>
+</br>
+<b>Date Released:</b> <%= @movie.year %></br>
+</br>
+<b>Plot:</b> <%= @movie.plot %></br>
+</br>
+<b>MPAA Rating:</b> <%= @movie.mpaa_rating %></br>
+</br>
+<b>Rating:</b> <%= @movie.rating %></br>
+
+
+<%= button_to "Save", save_path %> <%= button_to "Favorite", add_favorite_path %>
