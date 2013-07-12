@@ -40,11 +40,11 @@ class MoviesController < ApplicationController
 
   # Post
   # /
-  def add_favorite
+  def favorites
     @movie = Imdb::Movie.new(params[:id])
     movie = Movie.new
     movie.title = @movie.title
-    movie.year = @movie.year
+    # movie.year = @movie.year
     movie.plot = @movie.plot
     movie.mpaa_rating = @movie.mpaa_rating
     movie.rating = 100
